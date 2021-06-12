@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form #f="ngForm" (ngSubmit)='onSubmit(f.value)'>
+                <div class="form-group" >
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="name" ngModel 
+                    name="firstName"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="email" class="form-control" id="email"  ngModel 
+                    name="email"
+                    required
+                    email
+                    #email="ngModel">
+                    <span class="help-block" *ngIf="!email.valid && email.touched">Enter Valid email</span>
+                </div>
+                <div class="from-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="pass" ngModel 
+                    name="pass"
+                    required
+                    #pass="ngModel">
+                </div>
+                <div class="from-group">
+                    <label for="password">Re-enter Password</label>
+                    <input type="password" class="form-control" id="pass1" ngModel 
+                    name="pass1"
+                    required
+                    #pass1="ngModel">
+                    <span class="help-block" *ngIf="pass.value!=pass1.value && pass1.touched">Password Missmatch</span>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
