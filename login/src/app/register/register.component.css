@@ -6,3 +6,8 @@ input.ng-invalid.ng-touched{
     justify-content: center;
    
 }
+
+.box2{
+    justify-content: center;
+    display: flex;
+}
