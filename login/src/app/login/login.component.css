@@ -17,4 +17,8 @@ span.box3 {
     font-style: oblique;
     align-self: center;
     margin-left: 141px;
+    
+}
+input.ng-invalid.ng-touched{
+    border: 1px red solid;
 }
