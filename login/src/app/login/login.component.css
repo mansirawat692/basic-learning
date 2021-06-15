@@ -15,4 +15,6 @@ span.box3 {
     color: blueviolet;
     font-size: larger;
     font-style: oblique;
+    align-self: center;
+    margin-left: 141px;
 }
