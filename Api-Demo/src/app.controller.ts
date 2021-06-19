@@ -15,9 +15,9 @@ export class AppController {
   }
 
 
-  @Get('/:id')
-  findOne(@Param('id') id: number):Promise<User>{
-    return this.appService.findOne(id);
+  @Get('/:email')
+  findOne(@Param('email') email: string):Promise<User>{
+    return this.appService.findOne(email);
   }
 
 

@@ -43,8 +43,8 @@ constructor(
 
 
 
-  findOne(id: number):Promise<User>{
-    return this.repo.findOne(id);
+  findOne(email: string):Promise<User>{
+    return this.repo.findOne(email);
   }
 
 
