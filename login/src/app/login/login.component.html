@@ -1,21 +1,22 @@
 <div class="container">
     <div class="row layout">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <form>
+            <form #f=ngForm (ngSubmit)="onSubmit(f.value)">
                 <div class="form-group">
                     <label for="username">Email</label>
-                    <input type="email" class="form-control" id="email"  ngModel
+                    <input type="email" class="form-control" id="email" required ngModel
+                    email
                      name="email">
                 </div>
                 <div class="from-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="pass"  ngModel 
+                    <input type="password" class="form-control" id="pass"  required ngModel 
                     name="pass">
                 </div>
                 <br>
                 <div class="box1">
-                <button class="btn btn-primary" type="submit">Login</button>
-                <span class="box3">Create an account ?</span>
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Login</button>
+                <span class="box3"><a routerLink="/register">Create an account ?</a></span>
             </div>
             </form>
         </div>
