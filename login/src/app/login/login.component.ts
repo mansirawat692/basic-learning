@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -8,13 +9,17 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(val:NgForm){
-    console.log(val);
+  onSubmit(postData:{email:string, pass:string}){
+    this.http.get('http://localhost:3000/').
+    subscribe(response=>{
+      console.log(response);
+    })
+    console.log(postData)
   }
 
 }
