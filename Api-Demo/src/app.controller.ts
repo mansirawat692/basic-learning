@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { AppService } from './app.service';
 import { User } from './user.entity';
@@ -21,6 +22,10 @@ export class AppController {
   }
 
 
+  @Post()
+  login(@Body() test:Test){
+
+  }
 
   @Patch('/:id')
   Update(@Param() id:number,@Body() user : User){
