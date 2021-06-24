@@ -7,18 +7,33 @@
     justify-content: center;
 }
 
-.box1 {
-    display: flow-root;
+.logbtn {
+    text-align: center;
 }
 
-span.box3 {
+button.btn.btn-primary {
+    width: 100px;
+}
+
+p.box3 {
     color: blueviolet;
     font-size: larger;
     font-style: oblique;
-    align-self: center;
-    margin-left: 141px;
+    text-align: center;
+    margin-top: 10px;
     
 }
 input.ng-invalid.ng-touched{
     border: 1px red solid;
+}
+
+.header {
+    text-align: center;
+    color: royalblue;
+    font-size: xx-large;
+    font-style: bold;
+    font-family: -webkit-body;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }

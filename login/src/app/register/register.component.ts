@@ -10,7 +10,9 @@ import { NgForm } from '@angular/forms';
 export class RegisterComponent implements OnInit {
  
   constructor(private http: HttpClient) { }
-
+showPassword : boolean=false
+showPassword1 : boolean=false
+response =false
   ngOnInit(): void {
   }
 
@@ -18,10 +20,16 @@ export class RegisterComponent implements OnInit {
     
     this.http.post('http://localhost:3000/',postData).
     subscribe(responseData=>{
-      console.log(responseData);
+      console.log(responseData)
     })
-    console.log(postData)
     
   }
 
+  showPass(){
+    this.showPassword=!this.showPassword
+  }
+
+  showPass1(){
+    this.showPassword1=!this.showPassword1
+  }
 }

@@ -1,3 +1,4 @@
+<div class="header">Login</div>
 <div class="container">
     <div class="row layout">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
@@ -6,17 +7,25 @@
                     <label for="username">Email</label>
                     <input type="email" class="form-control" id="email" required ngModel
                     email
-                     name="email">
+                     name="email"
+                     >
                 </div>
                 <div class="from-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="pass"  required ngModel 
+                    <input [type]="showPassword? 'text':'password'" class="form-control" id="pass"  required ngModel 
                     name="pass">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                   <i class="fa" 
+                   [ngClass]="{
+                       'fa-eye-slash':!showPassword,
+                       'fa-eye':showPassword
+                   }"  (click)="showPass()"></i>
                 </div>
-                <br>
-                <div class="box1">
+                <div class="logbtn">
                 <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Login</button>
-                <span class="box3"><a routerLink="/register">Create an account ?</a></span>
+                </div>
+                <div>
+                    <p class="box3"><a routerLink="/register">Create an account ?</a></p>
             </div>
             </form>
         </div>

@@ -11,3 +11,27 @@ input.ng-invalid.ng-touched{
     justify-content: center;
     display: flex;
 }
+
+.header {
+    text-align: center;
+    color: royalblue;
+    font-size: xx-large;
+    font-style: bold;
+    font-family: -webkit-body;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+p.box3 {
+    color: blueviolet;
+    font-size: larger;
+    font-style: oblique;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.help-block{
+    color: red;
+}

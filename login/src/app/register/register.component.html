@@ -1,6 +1,7 @@
+<div class="header">Register</div>
 <div class="container">
     <div class="row layout">
-        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <div class="col-xs-12 col-sm-10 col-sm-8 col-sm-offset-1 col-sm-offset-2">
             <form #f="ngForm" (ngSubmit)='onSubmit(f.value)'>
                 <div class="form-group" >
                     <label for="Name">Name</label>
@@ -16,26 +17,43 @@
                     email
                     #email="ngModel">
                     <span class="help-block" *ngIf="!email.valid && email.touched">Enter Valid email</span>
+                    <!-- <span class="help-block" *ngIf="!responseData">email already exist</span> -->
                 </div>
                 <div class="from-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="pass" ngModel 
+                    <input [type]="showPassword?'text':'password'" class="form-control" id="pass" ngModel 
                     name="pass"
                     required
                     #pass="ngModel">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <i class="fa" 
+                    [ngClass]="{
+                        'fa-eye-slash':!showPassword,
+                        'fa-eye':showPassword
+                    }"  (click)="showPass()"></i>
                 </div>
                 <div class="from-group">
                     <label for="password">Re-enter Password</label>
-                    <input type="password" class="form-control" id="pass1" ngModel 
+                    <input [type]="showPassword1?'text':'password'" class="form-control" id="pass1" ngModel 
                     name="pass1"
                     required
                     #pass1="ngModel">
-                    <span class="help-block" *ngIf="pass.value!=pass1.value && pass1.touched">Password Missmatch</span>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <i class="fa" 
+                    [ngClass]="{
+                        'fa-eye-slash':!showPassword1,
+                        'fa-eye':showPassword1
+                    }"  (click)="showPass1()"></i>
+                    <br>
+                    <p class="help-block" *ngIf="pass.value!=pass1.value && pass1.touched">Password mismatch</p>
                 </div>
                 <br>
                 <div class="box2">
                 <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Register</button>
             </div>
+            <div>
+                <p class="box3"><a routerLink="/">Login ?</a></p>
+        </div>
             </form>
         </div>
     </div>

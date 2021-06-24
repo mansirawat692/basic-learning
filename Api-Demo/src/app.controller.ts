@@ -14,6 +14,7 @@ export class AppController {
   findAll():Promise<User[]>{
     return this.appService.findAll();
   }
+  
 
 
   @Get('/:email')
@@ -22,9 +23,10 @@ export class AppController {
   }
 
 
-  @Post()
-  login(@Body() test:Test){
-
+  @Post('login')
+  login(@Body() user:User){
+  const result =   this.appService.login(user)
+   return result
   }
 
   @Patch('/:id')
@@ -32,10 +34,11 @@ export class AppController {
     this.appService.Update(id,user);
   }
 
-@Post()
-create(@Body() arg: User){
-this.appService.create(arg);
-}
+  @Post()
+  create(@Body() arg: User){
+  const result=this.appService.create(arg);
+  return result
+  }
 
 @Delete('/:id')
 remove(@Param() id: number){
