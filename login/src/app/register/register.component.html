@@ -17,7 +17,6 @@
                     email
                     #email="ngModel">
                     <span class="help-block" *ngIf="!email.valid && email.touched">Enter Valid email</span>
-                    <!-- <span class="help-block" *ngIf="!responseData">email already exist</span> -->
                 </div>
                 <div class="from-group">
                     <label for="password">Password</label>
@@ -49,7 +48,8 @@
                 </div>
                 <br>
                 <div class="box2">
-                <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Register</button>
+                <button class="btn btn-primary" type="submit" [disabled]=" pass.value!=pass1.value!=null && !f.valid">Register</button>
+                
             </div>
             <div>
                 <p class="box3"><a routerLink="/">Login ?</a></p>

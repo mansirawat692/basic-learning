@@ -15,8 +15,8 @@ email: string
 @Column()
 pass:string
 
-@Column()
-pass1:string
+// @Column()
+// pass1:string
 
 // @Column()
 // isActive: boolean
