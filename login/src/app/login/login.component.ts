@@ -25,15 +25,12 @@ export class LoginComponent implements OnInit {
       this.isValid=res as boolean
       if(res)
       {
-        // route/navigate dusre component pe
-       this.errorMsg = ''
         this.route.navigate(['/dashboard'])
       }
       else{
       
         this.errorMsg = "Invalid Credentials"
       }
-      console.log("response"+this.isValid)
     })
   }
 

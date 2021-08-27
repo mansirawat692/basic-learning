@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   constructor(private http: HttpClient) { }
 showPassword : boolean=false
 showPassword1 : boolean=false
-response =false
+isValid =false
   ngOnInit(): void {
   }
 
@@ -20,6 +20,7 @@ response =false
     
     this.http.post('http://localhost:3000/',postData).
     subscribe(responseData=>{
+      this.isValid=responseData as boolean
       console.log(responseData)
     })
     
