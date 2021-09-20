@@ -12,9 +12,9 @@ export class AppService {
     @InjectRepository(User) private repo: Repository<User>) { }
 
 
-create(info: any):Promise<User>{
-return this.repo.save(info)
-}
+// create(info: any):Promise<User>{
+// return this.repo.save(info)
+// }
 
 
   // findAll(): Promise<User[]> {
@@ -27,14 +27,14 @@ return this.repo.save(info)
   // }
 
 
-  // async create(user: User):Promise<boolean> {
-  //   let check=await this.repo.findOne({where: {email: user.email}})
-  //   if(!check){
-  //   await this.repo.insert(user)
-  //   return false
-  //   }
-  //   return true
-  // }
+  async create(user: any):Promise<User> {
+    let check=await this.repo.findOne({where: {email: user.email}})
+    if(!check){
+   return await this.repo.save(user)
+    //return false
+    }
+   // return true
+  }
 
   async login(user: any): Promise<User> {
     return await this.repo.findOne(user)
